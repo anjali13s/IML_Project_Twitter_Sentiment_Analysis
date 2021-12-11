@@ -1,11 +1,13 @@
 import numpy as np
 import pandas as pd
 import spacy
+import nltk
+from textblob import TextBlob
 
 data = pd.read_csv('covid19_tweets.csv')
 data.head()
 
-tweets = np.array(data['text'])[:1000]
+tweets = np.array(data['text'])[:100]
 #print(tweets)
 
 punctuation = '!"#$%&\'()*+,-./:;<=>?[\\]^_`{|}~'
@@ -32,25 +34,42 @@ for tweet in tweets_split:
             new_text.append(word)
     new_tweets.append(new_text)
 
-print(new_tweets)  
-'''
-nlp = spacy.load("en_core_web_sm")
-doc = []
+#print(new_tweets)  
+
+tweet_sentences = []
 for tweet in new_tweets:
-    for text in tweet:
-            word = nlp(text)
-    doc.append(word)
-    token_list = [token for token in doc]
+    sentence = " ".join(tweet)
+    tweet_sentences.append(sentence)
 
-#print(token_list)
+#print(tweet_sentences)    
 
-filtered_tokens = []
-for word in doc:
-    filtered = [token for token in word if not token.is_stop]
-    filtered_tokens.append(filtered)
 
-print(filtered_tokens)    
 
-#lemmas = [ f"Token: {token}, lemma: {token.lemma_}" for token in filtered_tokens]
-#print(lemmas)
-'''
+sentiment_objects = [ ]
+for tweet in tweet_sentences:
+    sentiment_objects.append(TextBlob(tweet))
+
+
+#polarity_tweets = []
+#polarity_tweet = []
+category_tweet = []
+category_tweets = []
+
+#for i in range(len(tweet_sentences)):
+    #polarity_tweet = [sentiment_objects[i].polarity, sentiment_objects[i]]
+    #polarity_tweets.append(polarity_tweet)
+
+for i in range(len(tweet_sentences)):
+    if sentiment_objects[i].polarity > 0 :
+        category_tweet = ['positive', tweet_sentences[i]]
+
+    elif sentiment_objects[i].polarity < 0 :
+        category_tweet = ['negative', tweet_sentences[i]]    
+
+    else :
+        category_tweet = ['neutral', tweet_sentences[i]]    
+
+    category_tweets.append(category_tweet)
+
+print(category_tweets)
+
