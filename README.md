@@ -1,6 +1,6 @@
 # Twitter Data Sentiment Analysis
 
-There are 2 code files in our project - one for sentiment analysis of Airplane review and another for dataset containing tweets surrounding Ashoka University
+There are 2 code files in our project - one for the sentiment analysis of tweets containing reviews about US airlines and another for dataset containing tweets surrounding Ashoka University
 
 
 ## Sentiment Analysis for Ashoka Tweets
