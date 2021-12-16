@@ -10,4 +10,4 @@ The code for python code contains the keys required for extracting tweets have b
 
 ## Sentiment Analysis for Airline Tweets
 Package dependencies for the code are numpy, pandas, sklearn, re, nltk, keras, and tensorflow. 
-The file titles SentimentAnalysis constains the code for this. It accesses the csv file named AirlineTweets.csv. The data is first pre-processed and then, sentiment analysis is done using Naive Bayes and RNN-LSTM models.
+The file titled SentimentAnalysis contains the code for this. It accesses the csv file named AirlineTweets.csv to get the tweets. This data is first pre-processed and then, sentiment analysis is performed using Naive Bayes and RNN-LSTM models.
