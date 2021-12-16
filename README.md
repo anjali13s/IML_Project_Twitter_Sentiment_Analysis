@@ -4,6 +4,7 @@ There are 2 code files in our project - one for the sentiment analysis of tweets
 
 
 ## Sentiment Analysis for Ashoka Tweets
+Installations for packages have been added to the notebook file. 
 The file titled ashoka_tweets contains the code for this.
 The code for python code contains the keys required for extracting tweets have been added to the code file. Running the file would give us the tweets, the cleaned dataset, the array with the tweets and it's polarity. Then we get the model score after Multinomial Naive Bayes is done on the data frame.
 
